@@ -59,6 +59,16 @@ if ref_file and test_file:
         )
 else:
     st.write("Upload two signature images to run a comparison.")
+    import time
+
+start_time = time.perf_counter()
+
+# Call your existing signature comparison function here
+score = compare_images(img1, img2)
+
+response_time = time.perf_counter() - start_time
+
+print(f"Response Time: {response_time:.4f} seconds")
 
 with st.expander("Project details"):
     st.write("""
